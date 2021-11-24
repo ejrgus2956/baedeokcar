@@ -1,0 +1,18 @@
+spring:
+  h2:
+    console:
+      enabled: true #웹 콘솔 사용
+      path: /h2-console  #콘솔 경로
+
+  datasource:
+    # jdbc:h2:~/ 는 파일의 위치를 통해 읽어오는 것이기 때문에
+    # 안바꾸면 서버에 연동할 때 콘솔과 동시 접속으로 충돌이 나서 에러가 발생
+    url: jdbc:h2:tcp://localhost/~/baedeokcar
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    properties.hibernate.hbm2ddl.auto: update
