@@ -52,6 +52,7 @@ public class PostsServiceImpl implements PostsService {
         postsRepository.save(posts);
     }
 
+    // 수정 필요
     @Override
     public void remove(Long id) {
 
